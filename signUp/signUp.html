@@ -19,7 +19,9 @@
       href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
       rel="stylesheet"
     />
-    <script src="signUp.js" async defer></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+    <script src="signUp.js" defer type="module"></script>
   </head>
   <body>
     <form onsubmit="return false">
@@ -32,7 +34,8 @@
           name="korisnicko_ime"
           placeholder="niko.nikolic1"
         />
-        <p id="ime_greska">Korisnicko ime mora sadrzati samo mala slova!</p>
+        <p id="ime_greska">Korisnicko ime mora sadrzati samo mala slova,brojeve i biti duzine od 3 do 10 karaktera!</p>
+        <p id="korisnickoImePostoji">Korisnicko ime vec postoji!</p>
       </div>
       <div>
         <label for="email">Email adresa:</label>
