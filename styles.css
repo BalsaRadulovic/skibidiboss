@@ -1,0 +1,182 @@
+@keyframes typing {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 100%;
+  }
+}
+
+/* Cursor blinking effect */
+@keyframes blink-caret {
+  50% {
+    border-color: transparent;
+  }
+}
+
+body {
+  color: #333333;
+  font-family: "Lato";
+  display: block;
+  overflow: scroll;
+  scroll-behavior: smooth;
+  margin: 0;
+  user-select: none;
+}
+
+img {
+  top: 0;
+  position: absolute;
+  z-index: -1;
+  height: 100%;
+  width: 100%;
+}
+
+header {
+  background-color: #3bacfd;
+  padding: 0.6rem;
+  text-align: center;
+  font-weight: 700;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.header p {
+  color: whitesmoke;
+  font-size: 1.7rem;
+  margin: 0;
+  margin-left: 10px;
+}
+
+.naslov {
+  position: relative;
+  text-align: center;
+  font-size: 3rem;
+}
+
+.animacija {
+  color: whitesmoke;
+  font-size: 1.7rem;
+  margin: 0;
+  margin-left: 10px;
+  font-family: "Poppins";
+  text-align: center;
+  display: inline-block;
+  border-right: 3px solid #333;
+  padding-right: 5px;
+  white-space: nowrap;
+  overflow: hidden;
+  animation: typing 1s steps(130) 1s forwards,
+    blink-caret 0.75s step-end infinite;
+  animation-fill-mode: forwards;
+}
+
+.dugmici {
+  margin-top: 15px;
+  display: flex;
+  justify-content: space-evenly;
+  margin-right: 9px;
+  height: 1.85rem;
+}
+
+a {
+  transform: scale(100%);
+  margin-right: 10px;
+  transition: 0.3s;
+  color: #e39f7b;
+  text-decoration: none;
+  background-color: #fbf2c9;
+  border-radius: 20px;
+  font-size: 1.2rem;
+  padding-top: 2px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+a:hover {
+  transform: scale(115%);
+  transition: 0.3s;
+}
+
+ul {
+  position: absolute;
+  top: 20%;
+  right: 10%;
+  text-align: center;
+  list-style: none;
+}
+
+li {
+  margin-top: 10vh;
+  height: 2vh;
+}
+
+.div:hover {
+  transform: scale(115%);
+  transition: 0.3s;
+}
+.div {
+  transform: scale(100%);
+  transition: 0.3s;
+}
+.lista {
+  color: whitesmoke;
+  font-weight: 900;
+  background-color: #53b6fc;
+  border-radius: 50px;
+  
+  width: fit-content;
+}
+
+
+@media (min-width: 1100px){
+  #jedan {
+  margin-left: 200px;
+  width: 470px;
+}
+#dva {
+  margin-left: 250px;
+  width: 360px;
+}
+#tri {
+  margin-left: 300px;
+  width: 250px;
+}
+.lista {
+  font-size: 2.2rem;
+  padding: 19px 50px;
+}
+footer {
+  margin-top: 78.5vh;
+  margin-left: 85%;
+}
+.kontakt {
+  font-family: "lato";
+  font-size: 2rem;
+  font-weight: 900;
+  background-color: transparent;
+  color: whitesmoke;
+}
+
+}
+@media (max-width: 1100px) {
+  .lista {
+    font-size: 1.4rem;
+    padding: 9px 16px;
+  }
+  .kontakt {
+  font-family: "lato";
+  font-size: 1.4rem;
+  font-weight: 900;
+  background-color: transparent;
+  color: whitesmoke;
+}
+  footer {
+  margin-top: 79vh;
+  margin-left: 85%;
+}
+}
