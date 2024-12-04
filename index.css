@@ -119,10 +119,12 @@ li {
   transform: scale(115%);
   transition: 0.3s;
 }
+
 .div {
   transform: scale(100%);
   transition: 0.3s;
 }
+
 .lista {
   color: whitesmoke;
   font-weight: 900;
@@ -135,33 +137,32 @@ li {
 
 @media (min-width: 1100px){
   #jedan {
-  margin-left: 200px;
-  width: 470px;
-}
-#dva {
-  margin-left: 250px;
-  width: 360px;
-}
-#tri {
-  margin-left: 300px;
-  width: 250px;
-}
-.lista {
-  font-size: 2.2rem;
-  padding: 19px 50px;
-}
-footer {
-  margin-top: 78.5vh;
-  margin-left: 85%;
-}
-.kontakt {
-  font-family: "lato";
-  font-size: 2rem;
-  font-weight: 900;
-  background-color: transparent;
-  color: whitesmoke;
-}
-
+    margin-left: 200px;
+    width: 470px;
+  }
+  #dva {
+    margin-left: 250px;
+    width: 360px;
+  }
+  #tri {
+    margin-left: 300px;
+    width: 250px;
+  }
+  .lista {
+    font-size: 2.2rem;
+    padding: 19px 50px;
+  }
+  footer {
+    margin-top: 78.5vh;
+    margin-left: 85%;
+  }
+  .kontakt {
+    font-family: "lato";
+    font-size: 2rem;
+    font-weight: 900;
+    background-color: transparent;
+    color: whitesmoke;
+  }
 }
 @media (max-width: 1100px) {
   .lista {
@@ -169,14 +170,14 @@ footer {
     padding: 9px 16px;
   }
   .kontakt {
-  font-family: "lato";
-  font-size: 1.4rem;
-  font-weight: 900;
-  background-color: transparent;
-  color: whitesmoke;
-}
+    font-family: "lato";
+    font-size: 1.4rem;
+    font-weight: 900;
+    background-color: transparent;
+    color: whitesmoke;
+  }
   footer {
-  margin-top: 79vh;
-  margin-left: 85%;
-}
+    margin-top: 79vh;
+    margin-left: 85%;
+  }
 }

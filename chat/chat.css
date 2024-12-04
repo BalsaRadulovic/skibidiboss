@@ -3,19 +3,22 @@ body {
   flex-direction: column;
   align-items: center;
   margin: 0;
-      padding: 0;
-      background-color: #fbf2c9;
+  padding: 0;
+  background-color: #fbf2c9;
 }
+
 input {
   display: inline-block;
   width: calc(100% - 100px);
-      padding: 10px;
-      margin-right: 10px;
+  padding: 10px;
+  margin-right: 10px;
 }
+
 div {
   max-width: 600px;
   margin: auto;
 }
+
 #chat {
   width: 90%;
   max-width: 500px;
@@ -25,6 +28,7 @@ div {
   border-radius: 8px;
   background-color: #ffffff;
 }
+
 #poruke {
   height: 300px;
   overflow-y: scroll;
@@ -32,19 +36,20 @@ div {
   margin-bottom: 10px;
   padding: 10px;
 }
+
 a {
-    transform: scale(100%);
-    margin-top: 50px;
-    transition: 0.3s;
-    color: #f1f1f1;
-    text-decoration: none;
-    background-color: #3bacfd;
-    border-radius: 20px;
-    font-size: 1.2rem;
-    padding: 10px 20px;
-  }
-  
-  a:hover {
-    transform: scale(115%);
-    transition: 0.3s;
-  }
+  transform: scale(100%);
+  margin-top: 50px;
+  transition: 0.3s;
+  color: #f1f1f1;
+  text-decoration: none;
+  background-color: #3bacfd;
+  border-radius: 20px;
+  font-size: 1.2rem;
+  padding: 10px 20px;
+}
+
+a:hover {
+  transform: scale(115%);
+  transition: 0.3s;
+}
