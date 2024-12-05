@@ -9,7 +9,7 @@ let sifra_greska = document.querySelector("#sifra_greska");
 let pon_sifra_greska = document.querySelector("#ponovljena_sifra_greska");
 let imeZauzeto = document.querySelector("#korisnickoImePostoji");
 import {firebaseConfig,app,database,dobijPodatke,noviKorisnik,noviChat,novaPoruka,proveraLogin} from "../databasejs/database.js"
-
+//
 function provjeriFormu() {
     const usernamePattern = /^[a-z0-9]{3,10}$/;
     const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
@@ -35,13 +35,17 @@ function provjeriFormu() {
         pon_sifra_greska.classList.add("greska");
         greska=true;
     } else {pon_sifra_greska.classList.remove("greska");}
-    if (greska) {return;}
+    if (greska) {return false;}
     if (!noviKorisnik(user,password,email)) {
         imeZauzeto.classList.add("greska")
+        return false
     }
+
+    return true
 }
 
 registracijaDugme.addEventListener("click", (e) => {
-    provjeriFormu();
-    console.log("click radi")
+    if (provjeriFormu()) {
+        window.location.href = '../logIn/logIn.html'
+    }
 });
