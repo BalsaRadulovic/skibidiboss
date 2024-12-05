@@ -20,24 +20,12 @@ const intervalPoruka=20;
 let ukupanBrojPoruka;
 dugme.addEventListener("click",async () => {
     if (unos.value!="" && sender!="") {
-        novaPoruka(unos.value,sender,openChat)
-        reload(0)
+        await novaPoruka(unos.value,sender,openChat)
+        await reload(0)
         iframe.contentWindow.scrollTo(0,ekranMali.scrollHeight)
     }
 })
 
-// async function loadNewMessage(tekst,sender,openChat) {
-//     const poruke=await dobijPodatke("chatovi/"+openChat+"/poruke")//poruke iz tog chata u arrayu
-//     let idPoslednjePoruke=Object.keys(poruke).length-1
-//     const celaPoruka=document.createElement("div");
-//     const textPoruke=document.createElement("div"); textPoruke.textContent=poruke[i].sadrzaj; textPoruke.classList.add("textporuke");///////////
-//     const imeSendera=document.createElement("div"); imeSendera.textContent=poruke[i].sender; imeSendera.classList.add("sender");/////////////////
-//     if (sender!=poruke[idPoslednjePoruke-1].sender) {celaPoruka.appendChild(imeSendera)}
-//     celaPoruka.appendChild(textPoruke); celaPoruka.classList.add("poruka")
-//     ekranMali.appendChild(celaPoruka);
-//     ukupanBrojPoruka++;
-//     trenutnaVisina+=celaPoruka.clientHeight;
-// }
 function removeSve() {
     const elementsToDelete = iframeDoc.querySelectorAll('.poruka');
     elementsToDelete.forEach(element => {
