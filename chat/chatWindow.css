@@ -1,6 +1,6 @@
 .textporuke {
   display: block;
-  inline-size: 300px;
+  inline-size: 500px;
   overflow-wrap: break-word;
   border: 1px solid #1707f7;
   border-radius: 7px;
@@ -41,7 +41,7 @@
   }
 .textporukeposlate {
   display: block;
-  inline-size: 300px;
+  inline-size: 500px;
   overflow-wrap: break-word;
   font-weight: 900;
   color: #3bacfd;
@@ -55,7 +55,7 @@
 }
 .textporukeprimljene {
   display: block;
-  inline-size: 300px;
+  inline-size: 500px;
   background-color: #3bacfd;
   overflow-wrap: break-word;
   border-radius: 4px;
