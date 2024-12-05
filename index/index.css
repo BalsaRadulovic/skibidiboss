@@ -19,7 +19,7 @@ body {
   color: #333333;
   font-family: "Lato";
   display: block;
-  overflow: scroll;
+  overflow-x: hidden;
   scroll-behavior: smooth;
   margin: 0;
   user-select: none;
@@ -181,3 +181,4 @@ li {
     margin-left: 85%;
   }
 }
+
