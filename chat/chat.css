@@ -33,6 +33,7 @@ div {
   width: 77vw;
   background-image: url(/images/chataaaaapozadina.png);
   background-repeat: round;
+  background-size:100vw;
 }
 a {
   transform: scale(100%);
