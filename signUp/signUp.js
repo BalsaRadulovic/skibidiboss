@@ -35,13 +35,17 @@ function provjeriFormu() {
         pon_sifra_greska.classList.add("greska");
         greska=true;
     } else {pon_sifra_greska.classList.remove("greska");}
-    if (greska) {return;}
+    if (greska) {return false;}
     if (!noviKorisnik(user,password,email)) {
         imeZauzeto.classList.add("greska")
+        return false
     }
+
+    return true
 }
 
 registracijaDugme.addEventListener("click", (e) => {
-    provjeriFormu();
-    console.log("click radi")
+    if (provjeriFormu()) {
+        window.location.href = '../logIn/logIn.html'
+    }
 });
