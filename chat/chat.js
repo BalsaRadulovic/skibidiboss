@@ -68,4 +68,4 @@ function uslovnoGenerisanje() {
     if (brojUcitanihPoruka<ukupanBrojPoruka && iframeDoc.documentElement.scrollTop==0) {reload()}
 }
 await reload();
-setInterval(uslovnoGenerisanje,10000)
+setInterval(uslovnoGenerisanje,5000)

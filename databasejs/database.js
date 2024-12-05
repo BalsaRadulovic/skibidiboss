@@ -65,8 +65,10 @@ export async function noviChat(ucesnici,naziv) {
     for (let i=0;i<korisnici.length;i++) {
         for (let j=0;j<ucesnici.length;j++) {
             if (ucesnici[j]==korisnici[i].user) {
-                const konkretanKorisnik=korisnici[i];
-                database.ref("korisnici/"+konkretanKorisnik).update({[konkretanKorisnik.chatovi.length+1]:ID})
+                let broj2;
+                if(korisnici[i].chatovi!=null) {broj2=korisnici[i].chatovi.length+1} else {broj2=1;}
+                console.log(broj2)
+                database.ref("korisnici/"+(i+1)+"/chatovi").update({[broj2]:broj})
             }
         }
     }
