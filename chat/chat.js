@@ -12,7 +12,9 @@ iframe.onload = function() {
 let trenutnaVisina=0;
 let brojUcitanihPoruka=0;
 let openChat=1;//treba local storage
-let sender="sigma"
+let sender=sessionStorage.getItem('ime')
+
+
 let poslednjaPorukaID;
 const intervalPoruka=20;
 let ukupanBrojPoruka;

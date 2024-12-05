@@ -44,6 +44,7 @@ export async function noviKorisnik(username,password,email) {
             chatovi:[]
         }
         database.ref('korisnici/'+(length+1)).update(korisnik);
+        console.log("korsinik napravljen")
         return true;
     } else {return false;}
     
