@@ -9,7 +9,7 @@ let sifra_greska = document.querySelector("#sifra_greska");
 let pon_sifra_greska = document.querySelector("#ponovljena_sifra_greska");
 let imeZauzeto = document.querySelector("#korisnickoImePostoji");
 import {firebaseConfig,app,database,dobijPodatke,noviKorisnik,noviChat,novaPoruka,proveraLogin} from "../databasejs/database.js"
-
+//
 function provjeriFormu() {
     const usernamePattern = /^[a-z0-9]{3,10}$/;
     const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
