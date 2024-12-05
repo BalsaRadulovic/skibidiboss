@@ -10,7 +10,7 @@ let pon_sifra_greska = document.querySelector("#ponovljena_sifra_greska");
 let imeZauzeto = document.querySelector("#korisnickoImePostoji");
 import {firebaseConfig,app,database,dobijPodatke,noviKorisnik,noviChat,novaPoruka,proveraLogin} from "../databasejs/database.js"
 //
-function provjeriFormu() {
+async function provjeriFormu() {
     const usernamePattern = /^[a-z0-9]{3,10}$/;
     const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
     const passPattern =/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
@@ -36,16 +36,16 @@ function provjeriFormu() {
         greska=true;
     } else {pon_sifra_greska.classList.remove("greska");}
     if (greska) {return false;}
-    if (!noviKorisnik(user,password,email)) {
+    if (!(await noviKorisnik(user,password,email))) {
+        console.log("ovde je greska")
         imeZauzeto.classList.add("greska")
         return false
     }
-
     return true
 }
 
-registracijaDugme.addEventListener("click", (e) => {
-    if (provjeriFormu()) {
+registracijaDugme.addEventListener("click", async (e) => {
+    if (await provjeriFormu()) {
         window.location.href = '../logIn/logIn.html'
     }
 });
