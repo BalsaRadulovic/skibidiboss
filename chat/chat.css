@@ -1,12 +1,11 @@
 body {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-direction: row;
   margin: 0;
   padding: 0;
-  background-color: #fbf2c9;
+  background-color: white;
+  font-family: "Lato";
 }
-
 input {
   display: inline-block;
   width: calc(100% - 100px);
@@ -15,34 +14,107 @@ input {
 }
 
 div {
-  max-width: 600px;
-  margin: auto;
+  margin: 0;
 }
 
 #chat {
-  width: 90%;
-  max-width: 500px;
-  height:300px;
+  height:80vh;
   margin: 20px;
   border: 1px solid #ccc;
   padding: 10px;
-  border-radius: 8px;
-  background-color: #ffffff;
-}
+  border-radius: 25px;
+  background-color: #3bacfd;
 
+}
+#ekran {
+  height: 85%;
+  border: none;
+  margin-left: -10px;
+  width: 77vw;
+  background-image: url(/images/chataaaaapozadina.png);
+  background-repeat: round;
+}
 a {
   transform: scale(100%);
-  margin-top: 50px;
+  width: 1rem;
+  margin-top: 0;
+  margin-left: 7px;
+  margin-bottom: 0;
   transition: 0.3s;
-  color: #f1f1f1;
   text-decoration: none;
-  background-color: #3bacfd;
+  color: #3bacfd;
   border-radius: 20px;
-  font-size: 1.2rem;
-  padding: 10px 20px;
+  font-size: 2.5rem;
+  font-weight: 900;
+  padding: 0;
 }
 
 a:hover {
   transform: scale(115%);
   transition: 0.3s;
+}
+
+#prozor {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  margin-left: 100px;
+}
+#caskanja {
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+}
+p {
+  background-color: #FFE891;
+  font-size: 2rem;
+  color: #0874C0;
+  font-weight: 600;
+  margin-bottom: 8.5px;
+  margin-top: 0;
+  margin-left: 5px;
+  border-radius: 15px;
+  padding: 10px 10px;
+}
+#ne {
+  background-color: transparent;
+  color: whitesmoke;
+  font-weight: 900;
+  font-size: 25px;
+  padding: 0;
+  margin: 0;
+  margin-bottom: 5px;
+  
+}
+input {
+  margin-top: 5px;
+  margin-right: 0;
+  border: none;
+  border-radius: 10px;
+}
+#dugme {
+  transform: scale(1);
+  transition: 0.2s;
+  height: 37px;
+  margin-top: 5px;
+  background-color: #FFE891;
+  margin-left: 9px;
+  border: none;
+  font-size: 30px;
+  padding: 0 15px;
+  border-radius: 10px;
+  color: #B8A66D;
+}
+#dugme:hover {
+  cursor: pointer;
+  transform: scale(1.2);
+  transition: 0.2s;
+}
+
+
+
+
+#vanja {
+  display: flex;
+  flex-direction: row;
 }
