@@ -12,14 +12,14 @@ iframe.onload = function() {
 let trenutnaVisina=0;
 let brojUcitanihPoruka=0;
 let openChat=1;//treba local storage
-let sender=sessionStorage.getItem('ime')
+let sender=localStorage.getItem('ime')
 
 
 let poslednjaPorukaID;
 const intervalPoruka=20;
 let ukupanBrojPoruka;
 dugme.addEventListener("click",async () => {
-    if (unos.value!="") {
+    if (unos.value!="" && sender!="") {
         novaPoruka(unos.value,sender,openChat)
         reload(0)
         iframe.contentWindow.scrollTo(0,ekranMali.scrollHeight)
