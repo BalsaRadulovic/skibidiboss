@@ -61,5 +61,7 @@ async function uslovnoGenerisanje() {
     if (poslednjaPorukaID<novPoslednjiID) {reload(0)} else
     if ((brojUcitanihPoruka<ukupanBrojPoruka && iframeDoc.documentElement.scrollTop==0)) {reload(1)}
 }
-await reload(1);
-setInterval(uslovnoGenerisanje,1000)
+window.onload = async function() {
+    await reload(1);
+    setInterval(uslovnoGenerisanje,1000)
+}
