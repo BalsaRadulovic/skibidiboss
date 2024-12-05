@@ -9,8 +9,7 @@ export const firebaseConfig = {                                                 
     databaseURL: "https://sigmaboss-226b5-default-rtdb.europe-west1.firebasedatabase.app" //
 };                                                                                        //
 export const app = firebase.initializeApp(firebaseConfig);                                       //
-export const database = firebase.database();                                                     //
-                                                                                          //
+export const database = firebase.database();                                                     //                                                                                 //
 /*ovde ide config za bazu podataka koju cemo koristiti*/////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////
 //Object.keys(obj).length za broj propertija u objektu
