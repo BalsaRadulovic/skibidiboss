@@ -1,4 +1,4 @@
-import {firebaseConfig,app,database,dobijPodatke,noviKorisnik,noviChat,novaPoruka,proveraLogin} from "../databasejs/database.js"
+import {firebaseConfig,app,database,dobijPodatke,noviKorisnik,noviChat,novaPoruka,proveraLogin,onValue} from "../databasejs/database.js"
 //////////////////////////////////////////////////////////// slanje poruka u bazu podataka
 let dugme=document.querySelector("#dugme")
 let unos=document.querySelector("#input")
@@ -15,8 +15,22 @@ let openChat=1;//treba local storage
 let sender="sigma"
 let ukupanBrojPoruka;
 const intervalPoruka=20;
+const proveraChata=database.ref("chatovi/"+openChat)
+onValue(proveraChata,(snapshot) => {console.log("nova poruka")})
+/*
 
+// Get a reference to the database
+const db = getDatabase();
 
+// Get a reference to the location you want to watch
+const starCountRef = ref(db, 'posts/post1/starCount');
+
+// Attach a listener to read the data
+onValue(starCountRef, (snapshot) => {
+  const data = snapshot.val();
+  console.log('The star count is:', data);
+}); 
+*/
 dugme.addEventListener("click",async () => {
     if (unos.value!="") {
         novaPoruka(unos.value,sender,openChat)
