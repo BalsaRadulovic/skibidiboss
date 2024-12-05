@@ -4,16 +4,18 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./chat.css" />
-    <script src="./chat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
     <title>Chat</title>
   </head>
   <body>
     <div id="chat">
-      <div id="poruke"></div>
+      <iframe src="chatWindow.html" width="100%" height="100%" id="ekran"></iframe>
     </div>
     <div>
-      <input type="text" placeholder="poruka..." /> <button>Pošalji</button>
+      <input type="text" placeholder="poruka..." id="input" /> <button id="dugme">Pošalji</button>
     </div>
     <a href="../index/index.html">Početna stranica</a>
+    <script src="./chat.js" defer type="module"></script>
   </body>
 </html>

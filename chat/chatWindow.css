@@ -1,0 +1,21 @@
+.textporuke {
+    position:relative;
+    display:block;
+    inline-size:300px;
+    overflow-wrap:break-word;
+    border:1px solid #1707f7;
+    border-radius:7px;
+    background-color:rgb(230, 230, 245);
+    margin-top:0px;
+    margin-bottom:2px;
+    padding-left:5px;
+}
+.sender {
+    position:relative;
+    display:block;
+    inline-size:100px;
+    overflow-wrap:break-word;
+    border:1px solid #f75307;/**/
+    margin-bottom:5px;
+    padding-left:5px;
+}

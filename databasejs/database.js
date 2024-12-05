@@ -77,15 +77,10 @@ export async function novaPoruka(sadrzaj,sender,openChat) {
         sender:sender
     }
     const chat=await dobijPodatke("chatovi/"+openChat)
-    const brUcesnika=chat.ucesnici.length
-    for (let i=0;i<brUcesnika;i++) {
-        if (sender==chat.ucesnici[i]) {
-            database.ref("chatovi/"+openChat+"/poruke").update({[chat.brojPoruka]:poruka})
-            database.ref("chatovi/"+openChat).update({brojPoruka:(chat.brojPoruka)+1})
-            return;
-        } else {/*error*/ console.log("zao mi je niste u grupi"); return;}
-    }
-    
+    let brPor;
+    if (chat.brojPoruka==null) {brPor=0;} else {brPor=chat.brojPoruka}
+    database.ref("chatovi/"+openChat+"/poruke").update({[brPor]:poruka})
+    database.ref("chatovi/"+openChat).update({brojPoruka:brPor+1})
 }
 export async function proveraLogin(user,pass) {
     const nalozi=Object.values(await dobijPodatke("korisnici")) //ne znam da li ovo omogucava breach
