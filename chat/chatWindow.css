@@ -1,5 +1,4 @@
 .textporuke {
-    position:relative;
     display:block;
     inline-size:300px;
     overflow-wrap:break-word;
@@ -11,7 +10,6 @@
     padding-left:5px;
 }
 .sender {
-    position:relative;
     display:block;
     inline-size:100px;
     overflow-wrap:break-word;
