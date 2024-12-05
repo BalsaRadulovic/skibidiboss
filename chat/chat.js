@@ -45,9 +45,10 @@ async function reload(uslov) {
     removeSve()
     for (let i=start;i<ukupanBrojPoruka;i++) {
       const celaPoruka=document.createElement("div");
-      const textPoruke=document.createElement("div"); textPoruke.textContent=poruke[i].sadrzaj; textPoruke.classList.add("textporuke");
-      const imeSendera=document.createElement("div"); imeSendera.textContent=poruke[i].sender; imeSendera.classList.add("sender");
-      if (i==start || poruke[i].sender!=poruke[i-1].sender) {celaPoruka.appendChild(imeSendera)}
+      const textPoruke=document.createElement("div"); textPoruke.textContent=poruke[i].sadrzaj;
+      if (poruke[i].sender==sender) {
+        textPoruke.classList.add("textporukeposlate");
+      } else {textPoruke.classList.add("textporukeprimljene");}
       celaPoruka.appendChild(textPoruke); celaPoruka.classList.add("poruka")
       ekranMali.appendChild(celaPoruka);
     }
