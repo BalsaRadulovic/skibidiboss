@@ -44,6 +44,7 @@ function generisiChat (naziv, id) {
         localStorage.setItem("openChat",chatBubble.id)
         openChat=chatBubble.id
         console.log(openChat)
+        reload(1);
     })
 }
 
