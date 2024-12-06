@@ -21,8 +21,8 @@ let trenutnaVisina=0;
 let brojUcitanihPoruka=0;
 let openChat=1;//treba local storage
 let sender=localStorage.getItem('ime')
-
-const chatovi=await dobijPodatke("chatovi")
+async function generisiSveChatove() {
+    const chatovi=await dobijPodatke("chatovi")
 for (let i=1;i<=Object.keys(chatovi).length;i++) {
     const konkretanChat=await dobijPodatke("chatovi/"+i)
     const ucesnici=await dobijPodatke("chatovi/"+i+"/ucesnici")
@@ -47,6 +47,8 @@ function generisiChat (naziv, id) {
         reload(0);
     })
 }
+}
+
 
 
 let poslednjaPorukaID;
@@ -94,8 +96,12 @@ async function uslovnoGenerisanje() {
     if (poslednjaPorukaID<novPoslednjiID) {reload(0)} else
     if ((brojUcitanihPoruka<ukupanBrojPoruka && iframeDoc.documentElement.scrollTop==0)) {reload(1)}
 }
+
+
+
 window.onload = async function() {
     console.log("refresh treba da radi")
+    generisiSveChatove()
     await reload(1);
     setInterval(uslovnoGenerisanje,1000)
 }
