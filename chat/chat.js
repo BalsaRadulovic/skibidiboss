@@ -44,7 +44,7 @@ function generisiChat (naziv, id) {
         localStorage.setItem("openChat",chatBubble.id)
         openChat=chatBubble.id
         console.log(openChat)
-        reload(1);
+        reload(0);
     })
 }
 
@@ -95,6 +95,7 @@ async function uslovnoGenerisanje() {
     if ((brojUcitanihPoruka<ukupanBrojPoruka && iframeDoc.documentElement.scrollTop==0)) {reload(1)}
 }
 window.onload = async function() {
+    console.log("refresh treba da radi")
     await reload(1);
     setInterval(uslovnoGenerisanje,1000)
 }
