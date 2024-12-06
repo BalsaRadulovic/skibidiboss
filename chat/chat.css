@@ -29,7 +29,7 @@ div {
 #ekran {
   height: 85%;
   border: none;
-  margin-left: -10px;
+  margin-left: -0.38vw;
   width: 77vw;
   background-image: url(/images/chataaaaapozadina.png);
   background-repeat: round;
@@ -66,7 +66,7 @@ a:hover {
   display: flex;
   flex-direction: column;
 }
-p {
+/* p {
   background-color: #FFE891;
   font-size: 2rem;
   color: #0874C0;
@@ -76,7 +76,7 @@ p {
   margin-left: 5px;
   border-radius: 15px;
   padding: 10px 10px;
-}
+} */
 #ne {
   background-color: transparent;
   color: whitesmoke;

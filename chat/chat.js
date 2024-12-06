@@ -2,17 +2,50 @@ import {firebaseConfig,app,database,dobijPodatke,noviKorisnik,noviChat,novaPoruk
 //////////////////////////////////////////////////////////// slanje poruka u bazu podataka
 let dugme=document.querySelector("#dugme")
 let unos=document.querySelector("#input")
-const iframe = document.getElementById('ekran');
+const iframe = document.getElementById('ekran');//chat
+const chatLista=document.getElementById('listaChatova')//lista chatova
 let ekranMali;
 let iframeDoc;
+let chatListaDoc;
+let chatListaEkran;
 iframe.onload = function() {
-    iframeDoc=iframe.contentWindow.document
-    ekranMali=iframe.contentWindow.document.body
+    iframeDoc=iframe.contentWindow.document;
+    ekranMali=iframe.contentWindow.document.body;
 };
+
+chatLista.onload = function() {
+    chatListaDoc=chatLista.contentWindow.document;
+    chatListaEkran=chatLista.contentWindow.document.body;
+}
 let trenutnaVisina=0;
 let brojUcitanihPoruka=0;
 let openChat=1;//treba local storage
 let sender=localStorage.getItem('ime')
+
+const chatovi=await dobijPodatke("chatovi")
+for (let i=1;i<=Object.keys(chatovi).length;i++) {
+    const konkretanChat=await dobijPodatke("chatovi/"+i)
+    const ucesnici=await dobijPodatke("chatovi/"+i+"/ucesnici")
+    let length;
+    if (ucesnici.length==null) {
+        length=0;
+    } else {length=ucesnici.length;}
+    for (let j=0;j<length;j++) {
+        if (ucesnici[j]==sender) {generisiChat(konkretanChat.naziv,i)}
+    }
+}
+function generisiChat (naziv, id) {
+    const chatBubble=document.createElement("div");
+    chatBubble.textContent=naziv;
+    chatBubble.classList.add("p")
+    chatBubble.id=id
+    chatListaEkran.appendChild(chatBubble)
+    chatBubble.addEventListener("click", () => {
+        localStorage.setItem("openChat",chatBubble.id)
+        openChat=chatBubble.id
+        console.log(openChat)
+    })
+}
 
 
 let poslednjaPorukaID;
@@ -46,9 +79,7 @@ async function reload(uslov) {
     for (let i=start;i<ukupanBrojPoruka;i++) {
       const celaPoruka=document.createElement("div");
       const textPoruke=document.createElement("div"); textPoruke.textContent=poruke[i].sadrzaj;
-      if (poruke[i].sender==sender) {
-        textPoruke.classList.add("textporukeposlate");
-      } else {textPoruke.classList.add("textporukeprimljene");}
+      if (poruke[i].sender==sender) {textPoruke.classList.add("textporukeposlate");} else {textPoruke.classList.add("textporukeprimljene");}
       celaPoruka.appendChild(textPoruke); celaPoruka.classList.add("poruka")
       ekranMali.appendChild(celaPoruka);
     }
