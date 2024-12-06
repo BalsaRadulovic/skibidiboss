@@ -19,7 +19,7 @@ chatLista.onload = function() {
 }
 let trenutnaVisina=0;
 let brojUcitanihPoruka=0;
-let openChat=1;//treba local storage
+let openChat=2;//treba local storage
 let sender=localStorage.getItem('ime')
 async function generisiSveChatove() {
     const chatovi=await dobijPodatke("chatovi")
@@ -102,6 +102,6 @@ async function uslovnoGenerisanje() {
 window.onload = async function() {
     console.log("refresh treba da radi")
     generisiSveChatove()
-    await reload(1);
+    await reload(0);
     setInterval(uslovnoGenerisanje,1000)
 }
